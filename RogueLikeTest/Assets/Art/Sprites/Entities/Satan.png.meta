@@ -1,0 +1,828 @@
+fileFormatVersion: 2
+guid: d4d198891db39184298d917bde9db9fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7508474526547097187
+    second: Satan_0
+  - first:
+      213: 4908932068788444906
+    second: Satan_1
+  - first:
+      213: -6478758788743514600
+    second: Satan_2
+  - first:
+      213: 6566060064617020319
+    second: Satan_3
+  - first:
+      213: -7378314652970548479
+    second: Satan_4
+  - first:
+      213: 457723107343694198
+    second: Satan_5
+  - first:
+      213: -4754621261450716868
+    second: Satan_6
+  - first:
+      213: -7208715354597440104
+    second: Satan_7
+  - first:
+      213: -7374737097526246391
+    second: Satan_8
+  - first:
+      213: 6650604157012564042
+    second: Satan_9
+  - first:
+      213: 6700908135152504405
+    second: Satan_10
+  - first:
+      213: -1226064009791846030
+    second: Satan_11
+  - first:
+      213: 7409650039143867122
+    second: Satan_12
+  - first:
+      213: -1453866787333133845
+    second: Satan_13
+  - first:
+      213: 7769082662266590495
+    second: Satan_14
+  - first:
+      213: 2159037840900121170
+    second: Satan_15
+  - first:
+      213: -4616013615482363189
+    second: Satan_16
+  - first:
+      213: 5265795827496006504
+    second: Satan_17
+  - first:
+      213: -7597325397821899108
+    second: Satan_18
+  - first:
+      213: -4800611452187461053
+    second: Satan_19
+  - first:
+      213: 3295412251136568236
+    second: Satan_20
+  - first:
+      213: 3838813534945811415
+    second: Satan_21
+  - first:
+      213: 2649965422076317669
+    second: Satan_22
+  - first:
+      213: -9080249289665872901
+    second: Satan_23
+  - first:
+      213: -8534097291089191320
+    second: Satan_24
+  - first:
+      213: -6888444236667805050
+    second: Satan_25
+  - first:
+      213: 7910553025588609413
+    second: Satan_26
+  - first:
+      213: 8741564051830469279
+    second: Satan_27
+  - first:
+      213: -3395969737554358913
+    second: Satan_28
+  - first:
+      213: -2052356962921353555
+    second: Satan_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Satan_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 882
+        width: 104
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d994710233a8cc790800000000000000
+      internalID: -7508474526547097187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 882
+        width: 145
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee98aa35b7002440800000000000000
+      internalID: 4908932068788444906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 880
+        width: 146
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816b0832533d616a0800000000000000
+      internalID: -6478758788743514600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_3
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 882
+        width: 114
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b306d17d45f1b50800000000000000
+      internalID: 6566060064617020319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_4
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 762
+        width: 120
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10381a44ae5fa9990800000000000000
+      internalID: -7378314652970548479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_5
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 762
+        width: 87
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67975b2bdb82a5600800000000000000
+      internalID: 457723107343694198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_6
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 762
+        width: 134
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39d5bd5721340eb0800000000000000
+      internalID: -4754621261450716868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_7
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 762
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895c052149f75fb90800000000000000
+      internalID: -7208715354597440104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_8
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 761
+        width: 104
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9048d0eceaba7a990800000000000000
+      internalID: -7374737097526246391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 640
+        width: 165
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4858709e31bb4c50800000000000000
+      internalID: 6650604157012564042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_10
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 642
+        width: 142
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e4a4c22786efc50800000000000000
+      internalID: 6700908135152504405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_11
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 642
+        width: 142
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279477077452cfee0800000000000000
+      internalID: -1226064009791846030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_12
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 642
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2212dd37d54d660800000000000000
+      internalID: 7409650039143867122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_13
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 648
+        width: 108
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9254e1cd3d2dbe0800000000000000
+      internalID: -1453866787333133845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_14
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 522
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15db0bd48351db60800000000000000
+      internalID: 7769082662266590495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_15
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 522
+        width: 108
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2526a7b2a7176fd10800000000000000
+      internalID: 2159037840900121170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_16
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 521
+        width: 183
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2aecac210a0ffb0800000000000000
+      internalID: -4616013615482363189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_17
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 521
+        width: 187
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86332add76dd31940800000000000000
+      internalID: 5265795827496006504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_18
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 407
+        width: 152
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9eb5c39dc0e09690800000000000000
+      internalID: -7597325397821899108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_19
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 400
+        width: 194
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ab1b7a15dc06db0800000000000000
+      internalID: -4800611452187461053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_20
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 401
+        width: 194
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab27798bf7abbd20800000000000000
+      internalID: 3295412251136568236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_21
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 401
+        width: 151
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db18653294364530800000000000000
+      internalID: 3838813534945811415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_22
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 282
+        width: 110
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef4de1e28196c420800000000000000
+      internalID: 2649965422076317669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 283
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbf87951697cf180800000000000000
+      internalID: -9080249289665872901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_24
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 283
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e5106babbc09980800000000000000
+      internalID: -8534097291089191320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_25
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 283
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682245a96745760a0800000000000000
+      internalID: -6888444236667805050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_26
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 89
+        width: 144
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581c91b901ee7cd60800000000000000
+      internalID: 7910553025588609413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_27
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 158
+        width: 67
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92fdaab036405970800000000000000
+      internalID: 8741564051830469279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_28
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 160
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d881d24871fd0d0800000000000000
+      internalID: -3395969737554358913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Satan_29
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 159
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daee5c057309483e0800000000000000
+      internalID: -2052356962921353555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
