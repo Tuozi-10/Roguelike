@@ -15,10 +15,17 @@ namespace AI
         private bool m_moving;
         private float m_wanderingDurationRange;
 
+        private BatDataInstance m_batData;
+        
         protected override void Init()
         {
             base.Init();
             basePosition = transform.position;
+            
+            m_batData = (BatDataInstance)m_dataInstance;
+            Debug.LogError(m_batData.hp);
+            Debug.LogError(m_batData.armor);
+            Debug.LogError(m_batData.speed);
         }
 
         public override void ChangeState(AIStates aiState)
