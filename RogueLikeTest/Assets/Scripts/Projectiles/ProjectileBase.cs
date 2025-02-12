@@ -15,7 +15,7 @@ namespace Projectiles
         [SerializeField] private Transform m_childTransform;
         
         protected Rigidbody2D m_rb;
-
+        
         public void Initialize(Vector2 direction, bool fakeBezier, bool odd )
         {
             ProjectileManager.projectilesList.Add(this);
@@ -28,6 +28,8 @@ namespace Projectiles
             if (fakeBezier) DoBezier(odd ? m_amplitudeY : -m_amplitudeY);
         }
 
+        
+        
         private void DoBezier(float amplitude)
         {
             m_childTransform.DOLocalMove(new Vector3(0, amplitude, 0), m_durationBezier).SetEase(Ease.InOutSine).OnComplete(()=> DoBezier(-amplitude));

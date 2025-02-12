@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0355503a6802ee4b832a2aef6ad3468, type: 3}
   m_Name: MonsterData
   m_EditorClassIdentifier: 
-  <Hp>k__BackingField: 10
+  <Hp>k__BackingField: 20
   <RangeSight>k__BackingField: 10
   <Speed>k__BackingField: 3
   <Spread>k__BackingField: 1

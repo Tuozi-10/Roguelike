@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67ea586148ec814ea001d3a18c6299b, type: 3}
   m_Name: miniBatData
   m_EditorClassIdentifier: 
-  <Hp>k__BackingField: 1
+  <Hp>k__BackingField: 3
   <RangeSight>k__BackingField: 10
   <Speed>k__BackingField: 10
   <Spread>k__BackingField: 1

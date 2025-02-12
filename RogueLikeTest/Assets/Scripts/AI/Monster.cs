@@ -14,14 +14,22 @@ public class Monster : AbstractIA
     private bool m_moving;
     private float m_wanderingDurationRange;
     private bool isAttacking =false;
+    private SpriteRenderer spriteOfMonster;
     
     protected override void Init()
     {
         base.Init();
         basePosition = transform.position;
         m_monsterDataInstance = (MonsterDataInstance)m_iaABstractDataInstance;
+        spriteOfMonster = GetComponent<SpriteRenderer>();
     }
-    
+
+    protected override void BehaviourIA()
+    {
+        base.BehaviourIA();
+        spriteOfMonster.flipX = m_rigidbody.velocity.x < 0;
+    }
+
     protected override void Wander()
     {
         // leave the base wander to let it go in attack state if player near
@@ -68,5 +76,4 @@ public class Monster : AbstractIA
             go.GetComponent<AbstractIA>().ChangeState(AIStates.attacking);
         }
     }
-    
 }
