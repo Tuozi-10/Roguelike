@@ -133,14 +133,14 @@ namespace Controller
                            (Input.GetKey(KeyCode.S) ? 1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
             if (nbInputs > 1) speed *= 0.75f;
 
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
                 m_animator.Play("PlayerWalkUp");
                 moved = true;
             }
 
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
                 m_spriteRenderer.flipX = true;

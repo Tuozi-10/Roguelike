@@ -7,6 +7,7 @@ namespace Maps
 {
     public class Map : MonoBehaviour
     {
+        
         private List<AbstractIA> enemies = new List<AbstractIA>();
 
         private void Awake()

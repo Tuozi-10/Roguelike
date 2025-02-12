@@ -120,7 +120,7 @@ TextureImporter:
       213: 3317809242848202334
     second: isaac_38
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -137,10 +137,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -149,9 +151,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -179,6 +181,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -190,6 +194,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -202,6 +207,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1036,9 +1042,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      isaac_0: 9135563362665789592
+      isaac_1: -3995302596134580986
+      isaac_10: -323571080526494102
+      isaac_11: -1294372410372400983
+      isaac_12: -869334969714780156
+      isaac_13: -9108003571608368715
+      isaac_14: -2967291792290493696
+      isaac_15: -5805262850920009962
+      isaac_16: -6742389079781731431
+      isaac_17: 7387078419822005193
+      isaac_18: 6698065126881320531
+      isaac_19: 7030198368804322228
+      isaac_2: 6375001677776293147
+      isaac_20: 9174109852775880552
+      isaac_21: 1641202767584644277
+      isaac_22: 4734527905769891556
+      isaac_23: 1217605899902099446
+      isaac_24: 78259349365413194
+      isaac_25: 5424708938089845087
+      isaac_26: -8221696898610689300
+      isaac_27: 4120951492104369280
+      isaac_28: -3265206884716160199
+      isaac_29: -1728647316365596871
+      isaac_3: 6131084236845948118
+      isaac_30: -572603938932395756
+      isaac_31: 6463776031496684669
+      isaac_32: -8400174935369734326
+      isaac_33: -4487783036394864775
+      isaac_34: -2825354566201622998
+      isaac_35: 5845831753305784510
+      isaac_36: -2752130549057836573
+      isaac_37: 8955148686735612432
+      isaac_38: 3317809242848202334
+      isaac_4: 3782357840009348867
+      isaac_5: -2933755121637202382
+      isaac_6: 1644994706439153787
+      isaac_7: 9100585860533427364
+      isaac_8: 2519478975439989780
+      isaac_9: 7795924986605586390
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

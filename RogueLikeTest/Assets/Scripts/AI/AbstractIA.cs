@@ -17,10 +17,19 @@ namespace AI
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public abstract class AbstractIA : MonoBehaviour
     {
-        [Header("Common values"), Space]
-        [SerializeField] private int m_hp = 1;
-        [SerializeField] private int m_rangeSight     = 10;
-        [SerializeField] protected float m_speed = 10;
+
+        #region Data Initialization
+
+        [SerializeField] private AIAbstractData aiData;
+        protected AIAbstractDataInstance currentAiData;
+
+        private void Awake()
+        {
+            currentAiData = aiData.Instance();
+        }
+        
+        #endregion
+        
         [SerializeField] private SpriteRenderer m_body;
         
         #region effects applied ON ia
@@ -107,7 +116,7 @@ namespace AI
 
         protected virtual void Wander()
         {
-            if (Vector2.Distance(playerTransform.position, m_transform.position) < m_rangeSight)
+            if (Vector2.Distance(playerTransform.position, m_transform.position) < currentAiData.rangeSight)
                 ChangeState(attacking);
         }
 
@@ -139,11 +148,11 @@ namespace AI
 
         public void LooseHp(int count)
         {
-            m_hp -= count;
+            currentAiData.hp -= count;
             
             BloodBathManager.instance.RequestBloodPoof(m_transform.position);
             
-            if(m_hp <= 0)
+            if(currentAiData.hp <= 0)
                 ChangeState(dead);
             else
             {
@@ -172,12 +181,13 @@ namespace AI
         
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, m_rangeSight);
+            if (currentAiData == null) return;
+            Gizmos.DrawWireSphere(transform.position, currentAiData.rangeSight);
         }
 
         public override string ToString()
         {
-            return $"{name} {m_hp}";
+            return $"{name} {currentAiData.hp}";
         }
     }
 }

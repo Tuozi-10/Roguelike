@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 
 namespace Maps
 {
+    
     public class MapManager : MonoBehaviour
     {
         public static MapManager instance;

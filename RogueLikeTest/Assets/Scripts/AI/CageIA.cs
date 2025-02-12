@@ -5,6 +5,7 @@ namespace AI
 {
     public class CageIA : AbstractIA
     {
+        
         [SerializeField] private List<AbstractIA> m_spawn;
         
         [SerializeField] private int m_spawnMax = 5;
