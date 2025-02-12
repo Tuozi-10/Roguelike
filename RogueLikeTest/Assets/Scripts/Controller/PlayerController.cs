@@ -93,7 +93,7 @@ namespace Controller
 
         public void ResetVelocity()
         {
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.linearVelocity = Vector2.zero;
         }
         
         private void Start()

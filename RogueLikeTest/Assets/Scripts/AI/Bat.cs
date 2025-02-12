@@ -23,9 +23,6 @@ namespace AI
             basePosition = transform.position;
             
             m_batData = (BatDataInstance)m_dataInstance;
-            Debug.LogError(m_batData.hp);
-            Debug.LogError(m_batData.armor);
-            Debug.LogError(m_batData.speed);
         }
 
         public override void ChangeState(AIStates aiState)
@@ -58,7 +55,7 @@ namespace AI
             
             Vector2 direction = (playerTransform.position - m_transform.position);
             direction.Normalize();
-            m_rigidbody.velocity = direction * m_speed;
+            m_rigidbody.linearVelocity = direction * m_speed;
         }
 
         private void OnCollisionEnter2D(Collision2D other)

@@ -61,9 +61,6 @@ namespace AI
         {
             m_dataInstance = m_data.Instance();
             
-            Debug.LogError(m_dataInstance.hp);
-            Debug.LogError(m_dataInstance.armor);
-            
             Init();
         }
 
