@@ -21,7 +21,7 @@ namespace Projectiles
             while (true)
             {
                 yield return null;
-                m_rb.velocity = -transform.right * m_speed;
+                m_rb.linearVelocity = -transform.right * m_speed;
             }
         }
         

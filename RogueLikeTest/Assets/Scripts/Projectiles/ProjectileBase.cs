@@ -36,7 +36,7 @@ namespace Projectiles
         public virtual void Initialize(Vector2 direction)
         {
             if(m_rb == null) m_rb = GetComponentInChildren<Rigidbody2D>();
-            m_rb.velocity = direction * m_speed;
+            m_rb.linearVelocity = direction * m_speed;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

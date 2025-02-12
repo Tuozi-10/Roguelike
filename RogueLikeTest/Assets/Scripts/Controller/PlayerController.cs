@@ -93,7 +93,7 @@ namespace Controller
 
         public void ResetVelocity()
         {
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.linearVelocity = Vector2.zero;
         }
         
         private void Start()
@@ -129,18 +129,18 @@ namespace Controller
             var speed = m_timerDash <= 0 ? m_speed : m_dashSpeed;
             bool moved = false;
 
-            int nbInputs = (Input.GetKey(KeyCode.Z) ? 1 : 0) + (Input.GetKey(KeyCode.Q) ? 1 : 0) +
+            int nbInputs = (Input.GetKey(KeyCode.W) ? 1 : 0) + (Input.GetKey(KeyCode.A) ? 1 : 0) +
                            (Input.GetKey(KeyCode.S) ? 1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
             if (nbInputs > 1) speed *= 0.75f;
 
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
                 m_animator.Play("PlayerWalkUp");
                 moved = true;
             }
 
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
                 m_spriteRenderer.flipX = true;

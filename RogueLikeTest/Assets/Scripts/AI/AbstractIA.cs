@@ -5,6 +5,7 @@ using Controller;
 using DG.Tweening;
 using Maps;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utilities;
 using static AI.AbstractIA.AIStates;
 using Random = UnityEngine.Random;
@@ -17,30 +18,26 @@ namespace AI
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public abstract class AbstractIA : MonoBehaviour
     {
-        [Header("Common values"), Space]
-        [SerializeField] private int m_hp = 1;
-        [SerializeField] private int m_rangeSight     = 10;
-        [SerializeField] protected float m_speed = 10;
-        [SerializeField] private SpriteRenderer m_body;
-        
+        [SerializeField] protected AIData aiData;
+        private AIDataInstance aiDataInstance { get; set; }
+
+        [Header("Common values"), Space] [SerializeField]
+        private SpriteRenderer m_body;
+
         #region effects applied ON ia
-        
-        [Header("Effects"), Space]
-        [SerializeField] private float m_stuntValue   = 0;
-        
+
+        [Header("Effects"), Space] [SerializeField]
+        private float m_stuntValue = 0;
+
         [SerializeField] private int m_poisonStrength = 0;
         [SerializeField] private int m_poisonDuration = 0;
 
         #endregion
 
-        [Header("Death"), Space]
-        [SerializeField] private float m_spread = 0.5f;
-        [SerializeField] private int m_countBlood = 5;
-        
         public enum AIStates
         {
-            wandering, 
-            attacking, 
+            wandering,
+            attacking,
             dead
         }
 
@@ -60,18 +57,20 @@ namespace AI
         }
 
         private bool init;
-        
+
         protected virtual void Init()
         {
             if (init) return;
             init = true;
-            
+
+            aiDataInstance = aiData.Instance();
+
             player = PlayerController.instance;
             playerTransform = player.transform;
             m_transform = transform;
             m_rigidbody = GetComponent<Rigidbody2D>();
         }
-        
+
         public void Update()
         {
             BehaviourIA();
@@ -82,23 +81,26 @@ namespace AI
         public virtual void ChangeState(AIStates aiState)
         {
             if (!init) Init();
-            
+
             if (m_currentAiState == dead)
                 return; // no walking dead
-            
+
             m_currentAiState = aiState;
             // do things for when it changes here
         }
-        
+
         protected virtual void BehaviourIA()
         {
             switch (m_currentAiState)
             {
-                case attacking : Attack();
+                case attacking:
+                    Attack();
                     break;
-                case wandering: Wander();
+                case wandering:
+                    Wander();
                     break;
-                case dead: Die();
+                case dead:
+                    Die();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -107,53 +109,55 @@ namespace AI
 
         protected virtual void Wander()
         {
-            if (Vector2.Distance(playerTransform.position, m_transform.position) < m_rangeSight)
+            if (Vector2.Distance(playerTransform.position, m_transform.position) < aiData.RangeSight)
                 ChangeState(attacking);
         }
 
         protected virtual void Attack()
         {
-            
         }
 
         protected void Die()
         {
-            BloodBathManager.instance.RequestBlood(m_transform.position, m_countBlood, m_spread);
+            BloodBathManager.instance.RequestBlood(m_transform.position, aiData.CountBlood, aiData.Spread);
             // display fx/anim death here
             Destroy(gameObject);
             MapManager.instance.CheckMapCompleted();
 
             AudioManager.instance.PlaySound(AudioManager.sounds.goreWet, 0.25f);
-            
+
             var random = Random.Range(0, 100);
 
-            if(random < 4) BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Health, transform.position, 1);
-            else if(random < 5) BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Cutter, transform.position);
-            else if(random < 6) BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Bezier, transform.position);
-            else if(random < 11) BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Money, transform.position, 10);
+            if (random < 4)
+                BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Health, transform.position, 1);
+            else if (random < 5)
+                BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Cutter, transform.position);
+            else if (random < 6)
+                BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Bezier, transform.position);
+            else if (random < 11)
+                BonusManager.instance.RequestBonusAtPosition(Bonuses.Bonus.bonusType.Money, transform.position, 10);
         }
 
         #endregion
-        
+
         #region public methods
 
         public void LooseHp(int count)
         {
-            m_hp -= count;
-            
+            aiDataInstance.Hp -= count;
+
             BloodBathManager.instance.RequestBloodPoof(m_transform.position);
-            
-            if(m_hp <= 0)
+
+            if (aiDataInstance.Hp <= 0)
                 ChangeState(dead);
             else
             {
-                if(m_currentAiState == wandering) // in case u noob are camping snip
+                if (m_currentAiState == wandering) // in case u noob are camping snip
                     ChangeState(attacking);
-                
+
                 m_body.DOColor(Color.red, 0.05f).OnComplete(() => m_body.DOColor(Color.white, 0.05f));
-                m_body.DOFade(0.25f, 0.05f).OnComplete(()=> m_body.DOFade(1, 0.05f));
+                m_body.DOFade(0.25f, 0.05f).OnComplete(() => m_body.DOFade(1, 0.05f));
             }
-            
         }
 
         private void OnDestroy()
@@ -167,17 +171,17 @@ namespace AI
         #region properties
 
         public bool isDead => m_currentAiState == dead;
-        
+
         #endregion
-        
+
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, m_rangeSight);
+            Gizmos.DrawWireSphere(transform.position, aiData.RangeSight);
         }
 
         public override string ToString()
         {
-            return $"{name} {m_hp}";
+            return $"{name} {aiDataInstance.Hp}";
         }
     }
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce257892929d4460b0618a64ed96d90f, type: 3}
+  m_Name: BossCage
+  m_EditorClassIdentifier: 
+  Hp: 100
+  RangeSight: 20
+  Speed: 0
+  Spread: 1.5
+  CountBlood: 75
+  spawn:
+  - {fileID: 2949063810901603754, guid: de55f077875b9714d8fc241d73a1e8b1, type: 3}
+  - {fileID: 9000533085837236168, guid: fd9c604c8d8319441acf07cbd6c5dcb6, type: 3}
+  - {fileID: 2949063810901603754, guid: de55f077875b9714d8fc241d73a1e8b1, type: 3}
+  - {fileID: 2949063810901603754, guid: de55f077875b9714d8fc241d73a1e8b1, type: 3}
+  spawnMax: 5
+  spawnMin: 2

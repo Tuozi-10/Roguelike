@@ -8,8 +8,10 @@ namespace AI
     [RequireComponent(typeof(HitCollider))]
     public class Bat : AbstractIA
     {
-        [Header("Specific values"), Space]
-        [SerializeField] private float m_rangeWander = 2;
+        [Header("Specific values")] 
+        private BatData batData;
+        private BatDataInstance batDataInstance;
+
         private Vector2 basePosition;
 
         private bool m_moving;
@@ -19,6 +21,9 @@ namespace AI
         {
             base.Init();
             basePosition = transform.position;
+
+            batData = (BatData)aiData;
+            batDataInstance = (BatDataInstance)batData.Instance();
         }
 
         public override void ChangeState(AIStates aiState)
@@ -39,8 +44,8 @@ namespace AI
             
             m_moving = true;
             
-            Vector2 newMoveTarget = new Vector2(Random.Range(basePosition.x - m_rangeWander, basePosition.x + m_rangeWander),
-                    Random.Range(basePosition.y - m_rangeWander, basePosition.y + m_rangeWander));
+            Vector2 newMoveTarget = new Vector2(Random.Range(basePosition.x - batDataInstance.RangeWander, basePosition.x + batDataInstance.RangeWander),
+                    Random.Range(basePosition.y - batData.RangeWander, basePosition.y + batData.RangeWander));
             
             m_transform.DOMove(newMoveTarget, 1f).OnComplete(() => m_moving = false);
         }
@@ -51,13 +56,7 @@ namespace AI
             
             Vector2 direction = (playerTransform.position - m_transform.position);
             direction.Normalize();
-            m_rigidbody.velocity = direction * m_speed;
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if(other.transform.GetComponent<DingIa>() != null)
-                Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), other.collider);
+            m_rigidbody.linearVelocity = direction * aiData.Speed;
         }
     }
 }

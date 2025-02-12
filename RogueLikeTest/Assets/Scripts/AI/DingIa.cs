@@ -6,11 +6,17 @@ namespace AI
 {
     public class DingIa : AbstractIA
     {
+        private DingAIData dingAIData;
+        private DingAIDataInstance dingAIDataInstance;
+        
         private Animator m_animator;
         protected override void Init()
         {
             base.Init();
             m_animator = GetComponent<Animator>();
+
+            dingAIData = (DingAIData)aiData;
+            dingAIDataInstance = (DingAIDataInstance)dingAIData.Instance();
         }
         
         private bool IsAttacking;
@@ -31,11 +37,11 @@ namespace AI
             m_animator.Play("dinga",0,0);
             Vector2 direction = (playerTransform.position - m_transform.position);
             direction.Normalize();
-            
-            m_rigidbody.velocity = direction * m_speed;
+
+            m_rigidbody.linearVelocity = direction * dingAIData.Speed;
 
             yield return new WaitForSeconds(0.32f);
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.linearVelocity = Vector2.zero;
             
             yield return new WaitForSeconds(0.15f);
             CameraController.instance.ShakeCamera(0.35f, 0.15f);
