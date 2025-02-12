@@ -172,7 +172,10 @@ namespace AI
         
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, m_iaABstractDataInstance.rangeSight);
+            if (m_iaABstractDataInstance != null)
+            {
+                Gizmos.DrawWireSphere(transform.position, m_iaABstractDataInstance.rangeSight);
+            }
         }
 
         public override string ToString()

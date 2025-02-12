@@ -60,7 +60,7 @@ namespace AI
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if(other.transform.GetComponent<DingIa>() != null)
+            if(other.transform.GetComponent<DingIa>() != null || other.transform.GetComponent<Monster>() != null)
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), other.collider);
         }
     }
