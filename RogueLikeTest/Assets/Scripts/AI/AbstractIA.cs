@@ -17,10 +17,11 @@ namespace AI
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public abstract class AbstractIA : MonoBehaviour
     {
+        [SerializeField] protected IaABstractData m_iaABstractData;
+        protected IaABstractDataInstance m_iaABstractDataInstance;
+        
+        
         [Header("Common values"), Space]
-        [SerializeField] private int m_hp = 1;
-        [SerializeField] private int m_rangeSight     = 10;
-        [SerializeField] protected float m_speed = 10;
         [SerializeField] private SpriteRenderer m_body;
         
         #region effects applied ON ia
@@ -33,9 +34,7 @@ namespace AI
 
         #endregion
 
-        [Header("Death"), Space]
-        [SerializeField] private float m_spread = 0.5f;
-        [SerializeField] private int m_countBlood = 5;
+        
         
         public enum AIStates
         {
@@ -56,6 +55,7 @@ namespace AI
         /// </summary>
         private void Start()
         {
+            m_iaABstractDataInstance = m_iaABstractData.Instance();
             Init();
         }
 
@@ -107,7 +107,7 @@ namespace AI
 
         protected virtual void Wander()
         {
-            if (Vector2.Distance(playerTransform.position, m_transform.position) < m_rangeSight)
+            if (Vector2.Distance(playerTransform.position, m_transform.position) < m_iaABstractDataInstance.rangeSight)
                 ChangeState(attacking);
         }
 
@@ -118,7 +118,7 @@ namespace AI
 
         protected void Die()
         {
-            BloodBathManager.instance.RequestBlood(m_transform.position, m_countBlood, m_spread);
+            BloodBathManager.instance.RequestBlood(m_transform.position, m_iaABstractDataInstance.countBlood, m_iaABstractDataInstance.spread);
             // display fx/anim death here
             Destroy(gameObject);
             MapManager.instance.CheckMapCompleted();
@@ -139,11 +139,11 @@ namespace AI
 
         public void LooseHp(int count)
         {
-            m_hp -= count;
+            m_iaABstractDataInstance.hp -= count;
             
             BloodBathManager.instance.RequestBloodPoof(m_transform.position);
             
-            if(m_hp <= 0)
+            if(m_iaABstractDataInstance.hp <= 0)
                 ChangeState(dead);
             else
             {
@@ -172,12 +172,12 @@ namespace AI
         
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, m_rangeSight);
+            Gizmos.DrawWireSphere(transform.position, m_iaABstractDataInstance.rangeSight);
         }
 
         public override string ToString()
         {
-            return $"{name} {m_hp}";
+            return $"{name} {m_iaABstractDataInstance.hp}";
         }
     }
 }

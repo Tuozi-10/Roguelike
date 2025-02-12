@@ -32,7 +32,7 @@ namespace AI
             Vector2 direction = (playerTransform.position - m_transform.position);
             direction.Normalize();
             
-            m_rigidbody.velocity = direction * m_speed;
+            m_rigidbody.velocity = direction * m_iaABstractDataInstance.speed;
 
             yield return new WaitForSeconds(0.32f);
             m_rigidbody.velocity = Vector2.zero;
