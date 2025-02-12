@@ -17,25 +17,10 @@ namespace AI
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public abstract class AbstractIA : MonoBehaviour
     {
-        [Header("Common values"), Space]
-        [SerializeField] private int m_hp = 1;
-        [SerializeField] private int m_rangeSight     = 10;
-        [SerializeField] protected float m_speed = 10;
-        [SerializeField] private SpriteRenderer m_body;
-        
-        #region effects applied ON ia
-        
-        [Header("Effects"), Space]
-        [SerializeField] private float m_stuntValue   = 0;
-        
-        [SerializeField] private int m_poisonStrength = 0;
-        [SerializeField] private int m_poisonDuration = 0;
+        [SerializeField] protected EnemyData enemy;
 
-        #endregion
-
-        [Header("Death"), Space]
-        [SerializeField] private float m_spread = 0.5f;
-        [SerializeField] private int m_countBlood = 5;
+        protected  EnemyDataInstance enemyInstance { get; set; } 
+        [SerializeField] private SpriteRenderer Body;
         
         public enum AIStates
         {
@@ -57,6 +42,7 @@ namespace AI
         private void Start()
         {
             Init();
+            
         }
 
         private bool init;
@@ -65,11 +51,12 @@ namespace AI
         {
             if (init) return;
             init = true;
-            
+            enemyInstance = enemy.Instance();
             player = PlayerController.instance;
             playerTransform = player.transform;
             m_transform = transform;
             m_rigidbody = GetComponent<Rigidbody2D>();
+            
         }
         
         public void Update()
@@ -107,7 +94,7 @@ namespace AI
 
         protected virtual void Wander()
         {
-            if (Vector2.Distance(playerTransform.position, m_transform.position) < m_rangeSight)
+            if (Vector2.Distance(playerTransform.position, m_transform.position) < enemyInstance.RangeSight)
                 ChangeState(attacking);
         }
 
@@ -118,7 +105,7 @@ namespace AI
 
         protected void Die()
         {
-            BloodBathManager.instance.RequestBlood(m_transform.position, m_countBlood, m_spread);
+            BloodBathManager.instance.RequestBlood(m_transform.position, enemyInstance.CountBlood, enemyInstance.Spread);
             // display fx/anim death here
             Destroy(gameObject);
             MapManager.instance.CheckMapCompleted();
@@ -139,26 +126,26 @@ namespace AI
 
         public void LooseHp(int count)
         {
-            m_hp -= count;
+            enemyInstance.Health -= count;
             
             BloodBathManager.instance.RequestBloodPoof(m_transform.position);
             
-            if(m_hp <= 0)
+            if(enemyInstance.Health <= 0)
                 ChangeState(dead);
             else
             {
                 if(m_currentAiState == wandering) // in case u noob are camping snip
                     ChangeState(attacking);
                 
-                m_body.DOColor(Color.red, 0.05f).OnComplete(() => m_body.DOColor(Color.white, 0.05f));
-                m_body.DOFade(0.25f, 0.05f).OnComplete(()=> m_body.DOFade(1, 0.05f));
+                Body.DOColor(Color.red, 0.05f).OnComplete(() => Body.DOColor(Color.white, 0.05f));
+                Body.DOFade(0.25f, 0.05f).OnComplete(()=> Body.DOFade(1, 0.05f));
             }
             
         }
 
         private void OnDestroy()
         {
-            m_body.DOKill();
+            Body.DOKill();
             m_transform.DOKill();
         }
 
@@ -172,12 +159,12 @@ namespace AI
         
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, m_rangeSight);
+            Gizmos.DrawWireSphere(transform.position, enemyInstance.RangeSight);
         }
 
         public override string ToString()
         {
-            return $"{name} {m_hp}";
+            return "";// $"{name} {enemyData}";
         }
     }
 }

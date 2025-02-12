@@ -6,6 +6,7 @@ using Maps;
 using Projectiles;
 using Ui;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Utilities;
 using static Bonuses.Bonus;
 
@@ -22,6 +23,11 @@ namespace Controller
         [SerializeField] private TrailRenderer[] m_trails;
         [SerializeField] private GameObject m_parentSkinDaguer;
         [SerializeField] private GameObject m_parentSkinBezier;
+        public int PoisonDamage;
+        public float PoisonDuration;
+        public float LastPoisonTime;
+        public float PoisonDelay;
+        private float poisonStart = -100000;
 
         private float m_timerDash = 0f;
 
@@ -41,7 +47,7 @@ namespace Controller
         [SerializeField] private float m_durationImu = 0.25f;
         
         private float m_currentImu;
-        
+
         public void ApplyBonus(bonusType newBonus, int param = 0)
         {
             switch (newBonus)
@@ -93,7 +99,7 @@ namespace Controller
 
         public void ResetVelocity()
         {
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.linearVelocity = Vector2.zero;
         }
         
         private void Start()
@@ -107,6 +113,8 @@ namespace Controller
             transform.position = Vector3.zero;
             m_currentLife = m_lifePoints;
             LifeManager.Instance.UpdateLife(m_currentLife);
+            poisonStart = -1000;
+
         }
 
         private Queue<GameObject> m_pool = new Queue<GameObject>();
@@ -116,7 +124,7 @@ namespace Controller
         {
             if (GameManager.InMenu)
                 return;
-
+            HitPoison(PoisonDamage);
             m_currentImu -= Time.deltaTime;
             
             ManageMove();
@@ -129,18 +137,18 @@ namespace Controller
             var speed = m_timerDash <= 0 ? m_speed : m_dashSpeed;
             bool moved = false;
 
-            int nbInputs = (Input.GetKey(KeyCode.Z) ? 1 : 0) + (Input.GetKey(KeyCode.Q) ? 1 : 0) +
+            int nbInputs = (Input.GetKey(KeyCode.W) ? 1 : 0) + (Input.GetKey(KeyCode.A) ? 1 : 0) +
                            (Input.GetKey(KeyCode.S) ? 1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
             if (nbInputs > 1) speed *= 0.75f;
 
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.W))
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
                 m_animator.Play("PlayerWalkUp");
                 moved = true;
             }
 
-            if (Input.GetKey(KeyCode.Q))
+            if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
                 m_spriteRenderer.flipX = true;
@@ -195,6 +203,7 @@ namespace Controller
 
         private void Shoot(bool checkBezierRecursive = true)
         {
+            Debug.Log("Shoot");
             if (checkBezierRecursive && m_currentBonus == bonusType.Bezier) // double shoot for bezier
                 Shoot(false);
 
@@ -236,6 +245,38 @@ namespace Controller
             m_spriteRendererHead.DOFade(0.25f, 0.15f).OnComplete(()=> m_spriteRendererHead.DOFade(1, 0.15f));
             
             LifeManager.Instance.UpdateLife(m_currentLife);
+        }
+
+        public void StartPoison(int damage, float duration,float lastPoisonTime, float delay)
+        {
+            poisonStart = Time.time;
+            PoisonDamage = damage; 
+            PoisonDuration = duration;
+            LastPoisonTime = lastPoisonTime;
+            PoisonDelay = delay;
+        }
+        public void HitPoison(int damages)
+        {
+            
+            if (Time.time - LastPoisonTime > PoisonDelay && Time.time - poisonStart < PoisonDuration )
+            {
+            
+                AudioManager.instance.PlaySound(AudioManager.sounds.hit);
+                CameraController.instance.ShakeCamera();
+
+                m_currentLife -= damages;
+                m_spriteRenderer.DOColor(Color.red, 0.15f).OnComplete(() => m_spriteRenderer.DOColor(Color.white, 0.15f));
+                m_spriteRendererHead.DOColor(Color.red, 0.15f).OnComplete(() => m_spriteRendererHead.DOColor(Color.white, 0.15f));
+
+                m_spriteRenderer.DOFade(0.25f, 0.15f).OnComplete(()=> m_spriteRenderer.DOFade(1, 0.15f));
+                m_spriteRendererHead.DOFade(0.25f, 0.15f).OnComplete(()=> m_spriteRendererHead.DOFade(1, 0.15f));
+        
+                LifeManager.Instance.UpdateLife(m_currentLife);
+                LastPoisonTime = Time.time;
+                
+            }
+            
+            
         }
 
         public GameObject GetFromPool()

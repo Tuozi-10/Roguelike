@@ -33,7 +33,7 @@ namespace Ui
                 MenuManager.instance.DoLoose();
                 newLife = 0;
             }
-            
+             
             while(currentIcons.Count < newLife)
                 currentIcons.Add(Instantiate(lifeIcon, this.transform));
             

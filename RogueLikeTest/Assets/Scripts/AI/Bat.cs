@@ -8,17 +8,22 @@ namespace AI
     [RequireComponent(typeof(HitCollider))]
     public class Bat : AbstractIA
     {
-        [Header("Specific values"), Space]
-        [SerializeField] private float m_rangeWander = 2;
+        [Header("Specific values"), Space] 
+        
         private Vector2 basePosition;
+        
 
         private bool m_moving;
         private float m_wanderingDurationRange;
-
+        private BatData bat;
+        private BatDataInstance batInstance;
+        
         protected override void Init()
         {
             base.Init();
             basePosition = transform.position;
+            bat = (BatData)enemy;
+            batInstance = (BatDataInstance)bat.Instance();
         }
 
         public override void ChangeState(AIStates aiState)
@@ -39,11 +44,13 @@ namespace AI
             
             m_moving = true;
             
-            Vector2 newMoveTarget = new Vector2(Random.Range(basePosition.x - m_rangeWander, basePosition.x + m_rangeWander),
-                    Random.Range(basePosition.y - m_rangeWander, basePosition.y + m_rangeWander));
+            Vector2 newMoveTarget = new Vector2(Random.Range(basePosition.x - batInstance.RangeWander, basePosition.x + batInstance.RangeWander),
+                    Random.Range(basePosition.y - batInstance.RangeWander, basePosition.y + batInstance.RangeWander));
             
             m_transform.DOMove(newMoveTarget, 1f).OnComplete(() => m_moving = false);
         }
+
+  
 
         protected override void Attack()
         {
@@ -51,7 +58,7 @@ namespace AI
             
             Vector2 direction = (playerTransform.position - m_transform.position);
             direction.Normalize();
-            m_rigidbody.velocity = direction * m_speed;
+            m_rigidbody.linearVelocity = direction * batInstance.Speed;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
