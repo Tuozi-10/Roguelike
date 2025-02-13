@@ -27,7 +27,7 @@ TextureImporter:
       213: -8547596203632541812
     second: PC Computer - The Binding of Isaac Rebirth - Fat Bat_7
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -44,10 +44,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -56,9 +58,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -86,6 +88,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -97,6 +101,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -109,6 +114,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -292,9 +298,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_0: -9105596983086936180
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_1: -5247035376407645613
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_2: -4957921564152544108
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_3: 6470749438414331809
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_4: 7592718169483950695
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_5: 4669716024864749262
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_6: -7518782218803722001
+      PC Computer - The Binding of Isaac Rebirth - Fat Bat_7: -8547596203632541812
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

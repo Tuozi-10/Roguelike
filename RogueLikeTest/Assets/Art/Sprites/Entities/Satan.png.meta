@@ -93,7 +93,7 @@ TextureImporter:
       213: -2052356962921353555
     second: Satan_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,10 +110,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,9 +124,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -152,6 +154,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -163,6 +167,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -175,6 +180,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -820,9 +826,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Satan_0: -7508474526547097187
+      Satan_1: 4908932068788444906
+      Satan_10: 6700908135152504405
+      Satan_11: -1226064009791846030
+      Satan_12: 7409650039143867122
+      Satan_13: -1453866787333133845
+      Satan_14: 7769082662266590495
+      Satan_15: 2159037840900121170
+      Satan_16: -4616013615482363189
+      Satan_17: 5265795827496006504
+      Satan_18: -7597325397821899108
+      Satan_19: -4800611452187461053
+      Satan_2: -6478758788743514600
+      Satan_20: 3295412251136568236
+      Satan_21: 3838813534945811415
+      Satan_22: 2649965422076317669
+      Satan_23: -9080249289665872901
+      Satan_24: -8534097291089191320
+      Satan_25: -6888444236667805050
+      Satan_26: 7910553025588609413
+      Satan_27: 8741564051830469279
+      Satan_28: -3395969737554358913
+      Satan_29: -2052356962921353555
+      Satan_3: 6566060064617020319
+      Satan_4: -7378314652970548479
+      Satan_5: 457723107343694198
+      Satan_6: -4754621261450716868
+      Satan_7: -7208715354597440104
+      Satan_8: -7374737097526246391
+      Satan_9: 6650604157012564042
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
