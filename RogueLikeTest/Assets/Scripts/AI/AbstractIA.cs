@@ -22,6 +22,9 @@ namespace AI
         [SerializeField] private int m_rangeSight     = 10;
         [SerializeField] protected float m_speed = 10;
         [SerializeField] private SpriteRenderer m_body;
+
+        [SerializeField] private AbstractData m_data; 
+        protected AbstractDataInstance m_dataInstance;
         
         #region effects applied ON ia
         
@@ -56,6 +59,8 @@ namespace AI
         /// </summary>
         private void Start()
         {
+            m_dataInstance = m_data.Instance();
+            
             Init();
         }
 

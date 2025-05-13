@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 1f6e477cee160824bbc3e376c15d5aea
+guid: 9ee56ac1addfb4a47bbb4bed0db277ed
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5687480863655681990
-    second: Sucker_0
-  - first:
-      213: -4388334308975837132
-    second: Sucker_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -101,49 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Sucker_0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 8
-        width: 19
-        height: 18
-      alignment: 9
-      pivot: {x: 0.4227473, y: 0.11802827}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a30a8feb9420211b0800000000000000
-      internalID: -5687480863655681990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sucker_1
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 8
-        width: 15
-        height: 23
-      alignment: 9
-      pivot: {x: 0.39184648, y: 0.088545345}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43006d542318913c0800000000000000
-      internalID: -4388334308975837132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -154,9 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Sucker_0: -5687480863655681990
-      Sucker_1: -4388334308975837132
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
